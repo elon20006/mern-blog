@@ -1,3 +1,4 @@
+
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
@@ -11,7 +12,7 @@ import path from 'path';
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGO)
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log('MongoDb is connected');
   })
@@ -50,3 +51,4 @@ app.use((err, req, res, next) => {
     message,
   });
 });
+
